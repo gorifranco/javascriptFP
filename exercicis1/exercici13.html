@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>exercici13</title>
+    <script src="utilitatsJS/utilitats.js"></script>
 </head>
 <body>
-$END$
+<script>
+    "use strict"
+    let num1 = llegirEnter();
+    let num2 = llegirEnter();
+    document.write(`<p> ${num1} + ${num2} = ${sumar(num1, num2)} </p>`);
+    document.write(`<p> ${num1} - ${num2} = ${restar(num1, num2)} </p>`);
+    document.write(`<p> ${num1} * ${num2} = ${multiplicar(num1, num2)} </p>`);
+    document.write(`<p> ${num1} / ${num2} = ${dividir(num1, num2)} </p>`);
+    document.write(`<p> ${num1} ^ ${num2} = ${exponent(num1, num2)} </p>`);
+</script>
 </body>
 </html>

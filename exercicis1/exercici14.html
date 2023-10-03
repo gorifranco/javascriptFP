@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>exercici14</title>
+    <script src="utilitatsJS/utilitats.js"></script>
 </head>
 <body>
-$END$
+<script>
+    "use strict"
+    let a = llegirEnter();
+    document.write(`<p><u>TAULA DEL ${a}</u></p>`)
+    for (let i = 1; i <= 10; i++) {
+        document.write(`<p>${a} * ${i} = ${multiplicar(a, i)}</p>`)
+    }
+</script>
 </body>
 </html>

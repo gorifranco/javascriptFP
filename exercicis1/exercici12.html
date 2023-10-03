@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>exercici12</title>
+    <script src="utilitatsJS/utilitats.js"></script>
 </head>
 <body>
-$END$
+<script>
+    "use strict"
+    document.write(`<p> 15.123 = ${esEnterPositiu("15.123")} enter positiu </p> `);
+    document.write(`<p> 15 = ${esEnterPositiu("15")} enter positiu </p>`);
+    document.write(`<p> -15 = ${esEnterPositiu("-15")} enter positiu</p>`);
+    document.write(`<p> 15 = ${esEnter("15")} es enter </p> `);
+    document.write(`<p> -15 = ${esEnter("-15")} es enter </p>`);
+    document.write(`<p> 15.123 = ${esEnterNegatiu("15.123")} enter negatiu </p>`);
+    document.write(`<p> 15 = ${esEnterNegatiu("15")} enter negatiu</p> `);
+    document.write(`<p> -15 = ${esEnterNegatiu("-15")} enter negatiu</p> `);
+    document.write(`<p> 1.2 = ${esDecimal(1.2)} decimal</p> `);
+    document.write(`<p> +1.2 = ${esDecimal("+1.2")} decimal</p> `);
+    document.write(`<p> -1.2 = ${esDecimal("-1.2")} decimal</p> `);
+    document.write(`<p> 15 = ${esDecimal("15")} decimal</p> `);
+    document.write(`<p> .32 = ${esDecimal(".32")} decimal</p> `);
+</script>
 </body>
 </html>
