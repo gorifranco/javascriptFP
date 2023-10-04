@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exerrcici2</title>
+    <script type="module" src="modulValidacions.js"></script>
+</head>
+<body>
+<p id="frase1"></p>
+<p id="frase2"></p>
+<script type="module">
+    import {validarTelefon, validarDNI} from "./modulValidacions.js";
+    document.getElementById("frase1").innerHTML="<p> 789789798 és un telèfon vàlid? " + validarTelefon("789789789", 1) + "</p>";
+    document.getElementById("frase2").innerHTML="<p> 43460968F és u n DNI vàlid? " + validarDNI("43460968F") + "</p>";
+</script>
+</body>
+</html>

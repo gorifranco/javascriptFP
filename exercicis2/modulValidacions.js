@@ -1,5 +1,3 @@
-"use strict"
-
 function sumar(a, b) {
     return Number(a) + Number(b);
 }
@@ -73,3 +71,5 @@ function validarDNI(str) {
 function validarObligatori(str){
     return !(str === '' || str === null);
 }
+
+export {validarObligatori, validarDNI, validarData, validarMovil, validarTelefon};
