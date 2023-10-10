@@ -4,8 +4,145 @@
     <meta charset="UTF-8">
     <title>funcions</title>
     <script src="../exercicis1/utilitatsJS/utilitats.js"></script>
+    <script>
+        window.onload = function () {
+            //exercici1
+            let operacioSuma = sumar;
+            document.getElementById("exercici1").innerHTML = "<p>1 + 3 = " + operacioSuma(1, 3) + "</p>";
+
+            //exercici2
+            let exercici2 = function (a, b) {
+                document.getElementById("exercici2").innerHTML = "<p>";
+                for (let i = 0; i < arguments.length; i++) {
+                    document.getElementById("exercici2").innerHTML += arguments[i] + " ";
+                }
+                document.getElementById("exercici2").innerHTML += "</p>";
+            }
+            exercici2("Hola", "Joan", "Pons");
+
+            //exercici3
+            function calcula(a, b, funcio) {
+                funcio();
+                document.getElementById("exercici3").innerHTML = a + b;
+            }
+
+            calcula(5, 7, function () {
+                document.getElementById("exercici3").style.color = "red";
+                document.getElementById("exercici3").style.fontWeight = "bold";
+            });
+
+            //exercici4
+            function e4(a, b, c, d) {
+                document.getElementById("exercici4").innerHTML = "<p>Arguments: </p>";
+                for (let i = 0; i < arguments.length; i++) {
+                    document.getElementById("exercici4").innerHTML += "<p>" + arguments[i] + "</p>";
+                }
+                document.getElementById("exercici4").innerHTML += "<p>Propietats: </p>";
+                document.getElementById("exercici4").innerHTML += "<p>Nom de la funció: " + name + "</p>";
+                document.getElementById("exercici4").innerHTML += "<p>Nombre de parametres: " + arguments.length + "</p>";
+                //document.getElementById("exercici4").innerHTML += "<p>Codi de la funció: " + arguments.callee + "</p>";
+            }
+
+            e4("asd", "ssss", "a", "si");
+
+            //exercici5
+            function mostra() {
+                alert("Exercici5 :)");
+            }
+
+            document.getElementById("e5boto").onclick = mostra;
+
+            //exercici6
+            function mostraDades(a) {
+                alert(a);
+            }
+
+            document.getElementById("e6boto").onclick = mostraDades;
+
+            //exercici7
+            function sumaRest(...numeros) {
+                let total = 0;
+                for (let i = 0; i < numeros.length; i++) {
+                    total += numeros[i];
+                }
+                return total;
+            }
+
+            document.getElementById("exercici7").innerHTML = "<p>" + sumaRest(1, 2, 3, 4, 5, 6) + "</p>";
+
+            //exercici8
+            function fe8(){
+                document.getElementById("exercici8").innerHTML = "<p> Uep, com va? </p>";
+                function fe82() {
+                    document.getElementById("exercici8").innerHTML += "<p> va be? </p>";
+                }
+                fe82();
+            }
+            fe8();
+
+            //exercici9
+            for (let i = 0; i <= 9; i++) {
+                document.getElementById("boto" + i).onclick = function(){alert("boto" + i)};
+                //document.getElementById("boto" + i).click();
+            }
+
+            //exercici9 amb var
+            for (var i = 0; i <= 9; i++) {
+                document.getElementById("boto" + i).onclick = function(){alert("boto" + i)};
+                //document.getElementById("boto" + i).click();
+                //mostren el mateix text
+            }
+
+            //exercici9 amb arrows;
+            for (let i = 0; i <= 9; i++) {
+                document.getElementById("boto" + i).onclick = () => alert("boto" + i);
+                //document.getElementById("boto" + i).click();
+            }
+
+            //exercici10
+            document.getElementById("b0").onclick =() => {
+                document.getElementById("e10text").value = prompt("Dime algo bonito:")}
+
+            document.getElementById("b1").onclick =() => {
+                document.getElementById("e10paragraf").innerHTML = document.getElementById("e10text").value;
+            }
+        }
+    </script>
 </head>
 <body>
+<div id="exercici1"></div>
+<div id="exercici2"></div>
+<div id="exercici3"></div>
+<div id="exercici4"></div>
+<div id="exercici5">
+    <input type="button" id="e5boto" value="Exercici 5">
+</div>
+<div id="exercici6">
+    <input type="button" id="e6boto" value="Exercici 6">
+</div>
+<div id="exercici7"></div>
+<div id="exercici8"></div>
+<div id="exercici9">
+    <form>
+        <input type="button" id="boto0" value="boto0">
+        <input type="button" id="boto1" value="boto1">
+        <input type="button" id="boto2" value="boto2">
+        <input type="button" id="boto3" value="boto3">
+        <input type="button" id="boto4" value="boto4">
+        <input type="button" id="boto5" value="boto5">
+        <input type="button" id="boto6" value="boto6">
+        <input type="button" id="boto7" value="boto7">
+        <input type="button" id="boto8" value="boto8">
+        <input type="button" id="boto9" value="boto9">
+    </form>
+    Amb var apareix el mateix text.
+</div>
+<div id="exercici10">
+    <input type="button" id="b0" value="b0">
+    <input type="button" id="b1" value="b1">
+    <input type="text" id="e10text" hidden="hidden">
+    <p id="e10paragraf"></p>
+</div>
 
 </body>
 </html>
