@@ -71,39 +71,47 @@
             document.getElementById("exercici7").innerHTML = "<p>" + sumaRest(1, 2, 3, 4, 5, 6) + "</p>";
 
             //exercici8
-            function fe8(){
+            function fe8() {
                 document.getElementById("exercici8").innerHTML = "<p> Uep, com va? </p>";
+
                 function fe82() {
                     document.getElementById("exercici8").innerHTML += "<p> va be? </p>";
                 }
+
                 fe82();
             }
+
             fe8();
 
             //exercici9
             for (let i = 0; i <= 9; i++) {
-                document.getElementById("boto" + i).onclick = function(){alert("boto" + i)};
+                document.getElementById("boto" + i).onclick = function () {
+                    alert("boto" + i)
+                };
                 //document.getElementById("boto" + i).click();
             }
 
             //exercici9 amb var
             for (var i = 0; i <= 9; i++) {
-                document.getElementById("boto" + i).onclick = function(){alert("boto" + i)};
+                document.getElementById("boto" + i).onclick = function () {
+                    alert("boto" + i)
+                };
                 //document.getElementById("boto" + i).click();
                 //mostren el mateix text
             }
 
-            //exercici9 amb arrows;
+            // exercici9 amb arrows;
             for (let i = 0; i <= 9; i++) {
                 document.getElementById("boto" + i).onclick = () => alert("boto" + i);
                 //document.getElementById("boto" + i).click();
             }
 
             //exercici10
-            document.getElementById("b0").onclick =() => {
-                document.getElementById("e10text").value = prompt("Dime algo bonito:")}
+            document.getElementById("b0").onclick = () => {
+                document.getElementById("e10text").value = prompt("Dime algo bonito:")
+            }
 
-            document.getElementById("b1").onclick =() => {
+            document.getElementById("b1").onclick = () => {
                 document.getElementById("e10paragraf").innerHTML = document.getElementById("e10text").value;
             }
         }

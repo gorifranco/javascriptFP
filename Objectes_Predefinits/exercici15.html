@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercici15</title>
+    <script>
+        window.onload = function () {
+            document.getElementById("continuar").onclick = function () {
+                let numeroProductes = document.getElementById("numeroProductes").value;
+                for (let i = 0; i < parseInt(numeroProductes); i++) {
+                    document.getElementById("build").innerHTML += "<p>Article " + i + ": <input type='number' class='preus'></p>";
+                }
+            }
+            document.getElementById("calcular").onclick = function () {
+                let total = 0;
+                let preus = document.getElementsByClassName("preus");
+                let max = preus[0].value;
+                for (let preu of preus) {
+                    total += parseInt(preu.value);
+                    if (parseInt(preu.value) > max) max = parseInt(preu.value);
+                }
+                document.getElementById("final").innerHTML += "<p>Total: " + total + "</p>";
+                document.getElementById("final").innerHTML += "<p>Màxim: " + max + "</p>";
+            }
+        }
+    </script>
+
+</head>
+<body>
+<input type="number" id="numeroProductes">
+<button type="button" id="continuar">Continuar</button>
+
+<br>
+
+<div id="build"></div>
+<button type="button" id="calcular">Calcular</button>
+<br>
+<div id="final"></div>
+</body>
+</html>

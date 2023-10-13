@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arrays</title>
+    <script>
+        window.onload = function () {
+            //Exercici 1
+            let array1 = ["uep", 1, 5, true, 2, 2, 2, "Joan", "a", false];
+
+            //Exercici 2
+            array1[15] = "posicio15";
+
+            //Exercici 3
+            console.log("Exercici 3")
+            for (let i = 0; i < array1.length; i++) {
+                console.log(array1[i]);
+            }
+            console.log("-----------------")
+
+            //Exercici 4
+            console.log("Exercici 4")
+            for (let array1Key in array1) {
+                console.log(array1Key);
+            }
+            console.log("-----------------")
+
+            //Exercici 5
+            console.log("Exercici 5");
+            for (let array1Element of array1) {
+                console.log(array1Element);
+            }
+            console.log("-----------------")
+
+            //Exercici 6
+            console.log("Exercici 6");
+            array1.forEach(a => console.log(a));
+            console.log("-----------------");
+
+            //Exercici 7
+            let array7_1 = ["Uep", "com", "va"];
+            let array7_2 = ["Joan", "Pons"];
+            let a2 = array7_1.concat(array7_2);
+            console.log("exercici 7");
+            for (let array7_1value of a2) {
+                console.log(array7_1value);
+            }
+            console.log("--------------");
+
+            //Exercici 8
+            let frase = a2.join(" ");
+            console.log("exercici 8");
+            console.log(frase);
+            console.log("--------------");
+
+            //Exercici 9
+            let frase2 = a2.reverse().join(" ");
+            console.log("exercici 9");
+            console.log(frase2);
+            console.log("--------------");
+
+            //Exercici 10
+            let pila = [];
+            pila.push("Uep");
+            pila.push("com");
+            pila.push("va");
+            pila.push("Joan");
+            pila.push("Pons");
+
+            let l = pila.length;
+            console.log("exercici10");
+            for (let i = 0; i < l; i++) {
+                console.log(pila.pop());
+            }
+            //com que es mostren en ordre invers es una estructura LIFO (primer que he afegit és el derrer que ha sortit)
+            console.log("--------------");
+
+            //Exercici 11
+            let arrayE11 = [];
+            for (let i = 0; i < 20; i++) {
+                arrayE11[i] = Math.random() * 100;
+            }
+
+            arrayE11.sort(function (a, b) {
+                if (a < b) return -1;
+                else if (a > b) return 1;
+                else return 0;
+            })
+
+            console.log("Exercici 11");
+            for (let arrayE11Element of arrayE11) {
+                console.log(arrayE11Element);
+            }
+            console.log("--------------");
+
+            //Exercici 12
+            let array12 = array7_1;
+            let array12_2 = array12.map(a => a.split("").reverse().join(""));
+            console.log("Exercici 12");
+            for (let string of array12_2) {
+                console.log(string)
+            }
+            console.log("--------------");
+
+            //Exercici 13
+            let numeros = [1, 5, 7, 98, 4, 8];
+            console.log("Exercici 13");
+            console.log(numeros.reduce((a, b) => a + b));
+            console.log("--------------");
+
+            //Exercici 14
+
+
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -51,10 +51,9 @@ function validarMovil(str) {
 function validarTelefon(str, tipus) {
     //0 - mòvil
     //1 - fixe
-    if(tipus === 0){
+    if (tipus === 0) {
         return /^[67]\d{8}$/.test(str)
-    }
-    else if(tipus === 1){
+    } else if (tipus === 1) {
         return /^[89]\d{8}$/.test(str)
     }
     return false
@@ -65,11 +64,11 @@ function validarData(str) {
 }
 
 function validarDNI(str) {
-    if(str.length !== 9) return false;
-    if(!(/^\d{8}$/.test(str.substring(0,8)))) return false;
+    if (str.length !== 9) return false;
+    if (!(/^\d{8}$/.test(str.substring(0, 8)))) return false;
     return str.at(8) === ("TRWAGMYFPDXBNJZSQVHLCKET").at(str.substring(0, 8) % 23);
 }
 
-function validarObligatori(str){
+function validarObligatori(str) {
     return !(str === '' || str === null);
 }
