@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>set</title>
+</head>
+<body>
+<div id="respostes"></div>
+<script>
+    let a = new Set;
+    a.add("Uep");
+    a.add("com");
+    a.add("va");
+    a.add("?");
+    a.add("Uep");
+    for (let value of a.values()) {
+        document.getElementById("respostes").innerHTML += value + " "
+    }
+
+    let y = [1, 1, 1, 1];
+
+    function llevarDuplicats(array) {
+        let temp = new Set;
+        for (let arrayElement of array) {
+            temp.add(arrayElement);
+        }
+        let arrayTemp = [];
+        for (let value of temp.values()) {
+            arrayTemp.push(value);
+        }
+        return arrayTemp;
+    }
+
+    y = llevarDuplicats(y);
+    for (let number of y) {
+        console.log(number);
+
+    }
+</script>
+</body>
+</html>

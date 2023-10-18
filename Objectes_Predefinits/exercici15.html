@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>exercici15</title>
+    <script src="funcions.js"></script>
     <script>
         window.onload = function () {
             document.getElementById("continuar").onclick = function () {
@@ -12,19 +13,16 @@
                 }
             }
             document.getElementById("calcular").onclick = function () {
-                let total = 0;
                 let preus = document.getElementsByClassName("preus");
-                let max = preus[0].value;
-                for (let preu of preus) {
-                    total += parseInt(preu.value);
-                    if (parseInt(preu.value) > max) max = parseInt(preu.value);
+                let llistaPreus = [];
+                for (let preus1 of preus) {
+                    llistaPreus.push(parseInt(preus1.value));
                 }
-                document.getElementById("final").innerHTML += "<p>Total: " + total + "</p>";
-                document.getElementById("final").innerHTML += "<p>Màxim: " + max + "</p>";
+                document.getElementById("final").innerHTML += "<p>Total: " + total(llistaPreus) + "</p>";
+                document.getElementById("final").innerHTML += "<p>Màxim: " + maxim(llistaPreus) + "</p>";
             }
         }
     </script>
-
 </head>
 <body>
 <input type="number" id="numeroProductes">
