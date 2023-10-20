@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>info</title>
+    <style>
+        table, td{
+            border: 1px solid black;
+            margin: 0;
+            padding: 5px;
+            border-collapse: collapse;
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+            //screen
+            document.getElementById("window").innerHTML += "<tr><td>Window screen width</td><td> " + window.screen.width + "</td><td>Ample de la pantalla</td>"
+            document.getElementById("window").innerHTML += "<tr><td>Window screen height</td><td> " + window.screen.height + "</td><td>Alt de la pantalla</td>"
+            document.getElementById("window").innerHTML += "<tr><td>Window screen orientation angle</td><td> " + window.screen.orientation.angle + "</td><td>Orientació de la pantalla.<br>Útil en mòbils</td>"
+
+            //document
+            document.getElementById("document").innerHTML += "<tr><td>Window document url</td><td> " + window.document.URL + "</td><td>URL de la web</td>"
+            document.getElementById("document").innerHTML += "<tr><td>Window character set</td><td> " + window.document.characterSet + "</td><td>Set de caracters que utilitza la web</td>"
+            document.getElementById("document").innerHTML += "<tr><td>Window document lastModified</td><td> " + window.document.lastModified + "</td><td>Últim pic que es va modificar el codi</td>"
+
+            //history
+            document.getElementById("history").innerHTML += "<tr><td>Window history length</td><td> " + window.history.length + "</td><td>Llarg de l'historial</td>"
+
+            //
+        }
+    </script>
+</head>
+<body>
+<div>
+    <table id="window">
+        <caption>Window</caption>
+    </table>
+    <br/>
+    <table id="document">
+        <caption>Document</caption>
+    </table>
+    <br/>
+    <table id="history">
+        <caption>History</caption>
+    </table>
+</div>
+</body>
+</html>
