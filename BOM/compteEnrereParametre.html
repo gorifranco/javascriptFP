@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compte Enrere amb parametre</title>
+</head>
+<script>
+    let a = '';
+    window.onload = () => {
+        let params = new URLSearchParams(document.location.search);
+        if (params.has("durada") && Number(params.get("durada"))) {
+            document.getElementById("t").innerHTML = params.get("durada");
+        }
+        a = setInterval(canviaNumero, 1000);
+
+    }
+
+    function canviaNumero() {
+        document.getElementById("t").innerText = (parseInt(document.getElementById("t").innerText) - 1).toString();
+        if (document.getElementById("t").innerText === "7") clearInterval(a);
+    }
+</script>
+<body>
+<p id="t">10</p>
+</body>
+</html>

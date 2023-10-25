@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>aplicacio</title>
+    <script src="aplicacio.js"></script>
+    <script>
+        window.onload = () =>{
+            let app1 = new Aplicacio("App1", "Tipus1", "app pepino", 15);
+            let app2 = new Aplicacio("App2", "Tipus2", "app xareca", 10);
+            app2.preu = 150;
+
+            document.getElementById("app1").innerText = app1.toString();
+            document.getElementById("app2").innerHTML = app2.toString();
+
+        }
+
+    </script>
+</head>
+<body>
+<div id="app1"></div>
+<div id="app2"></div>
+</body>
+</html>

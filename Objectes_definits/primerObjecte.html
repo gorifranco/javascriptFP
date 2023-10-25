@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>primer objecte</title>
+    <script>
+        window.onload = () => {
+            let alumne1 = {nom: "Tomeu", edat: 15}
+            let alumne2 = {};
+            alumne2.nom = "Joan";
+            alumne2.edat = 10;
+
+            for (let alumne1Key in alumne1) {
+                document.getElementById("alumne1").innerHTML += alumne1Key + ": " + alumne1[alumne1Key] + " ";
+            }
+
+            Object.keys(alumne2).forEach(a => document.getElementById("alumne2").innerHTML += a + ": " + alumne2[a] + " ");
+
+        }
+    </script>
+</head>
+<body>
+<p>Ex4Classes 1:</p>
+<div id="alumne1"></div>
+<br>
+<p>Ex4Classes 2:</p>
+<div id="alumne2"></div>
+</body>
+</html>

@@ -7,30 +7,30 @@
 <body>
 <script>
 
-window.onload = function () {
-    let a = new Map;
-    a.set(1, "Toni");
-    a.set(2, "Joan");
-    a.set(14, "Pepito");
-    a.set(99, "Juanillo");
-document.getElementById("keys").innerHTML += "keys: <br/>"
-    for (let aElement of a.keys()) {
-        document.getElementById("keys").innerHTML += aElement + "<br/>"
+    window.onload = function () {
+        let a = new Map;
+        a.set(1, "Toni");
+        a.set(2, "Joan");
+        a.set(14, "Pepito");
+        a.set(99, "Juanillo");
+        document.getElementById("keys").innerHTML += "keys: <br/>"
+        for (let aElement of a.keys()) {
+            document.getElementById("keys").innerHTML += aElement + "<br/>"
+        }
+
+        document.getElementById("values").innerHTML += "Values: <br/>"
+        for (let aElement of a.values()) {
+            document.getElementById("values").innerHTML += aElement + "<br/>"
+        }
+
+        for (let aElement of a) {
+            document.getElementById("exercici1ff").innerHTML += "Numero: " + aElement[0] + ". Nom: " + aElement[1] + "<br/>";
+        }
+
+        document.getElementById("last").innerHTML += "Key: 1  value: " + a.get(1) + "<br/>"
+
+
     }
-
-    document.getElementById("values").innerHTML += "Values: <br/>"
-    for (let aElement of a.values()) {
-        document.getElementById("values").innerHTML += aElement + "<br/>"
-    }
-
-    for (let aElement of a) {
-        document.getElementById("exercici1ff").innerHTML += "Numero: " + aElement[0] + ". Nom: " + aElement[1] + "<br/>";
-    }
-
-    document.getElementById("last").innerHTML += "Key: 1  value: " + a.get(1) + "<br/>"
-
-
-}
 
 </script>
 <div id="exercici1ff"></div>

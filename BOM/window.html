@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window</title>
+    <script>
+        let finestra = '';
+        window.onload = () => {
+            document.getElementById("boto").onclick = () => {
+                finestra = window.open("tanca.html", "finestra1", "width=500, height=500");
+            }
+            document.getElementById("dim").onclick = () => {
+                if (!finestra.closed && finestra !== '') finestra.resizeTo(100, 100);
+            }
+            document.getElementById("mou").onclick = () => {
+                if (!finestra.closed && finestra !== '') finestra.moveTo(100, 100);
+            }
+            document.getElementById("escriu").onclick = () => {
+                if (!finestra.closed && finestra !== '') finestra.document.getElementById("posteriors").innerHTML = "Uep, com va?";
+            }
+            document.getElementById("tanca").onclick = () => {
+                if (!finestra.closed && finestra !== '') finestra.close();
+            }
+        }
+    </script>
+</head>
+<body>
+<button type="button" id="boto">Obrir finestra</button>
+<br>
+<button type="button" id="dim">Canviar dimensions</button>
+<button type="button" id="mou">Moure</button>
+<button type="button" id="escriu">Escriu</button>
+<button type="button" id="tanca">Tanca segona finestra</button>
+
+</body>
+</html>
