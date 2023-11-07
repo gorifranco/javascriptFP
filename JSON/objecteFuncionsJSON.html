@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OFJSON</title>
+    <script src="json.js"></script>
+    <script>
+        window.onload = () => {
+            let json =
+                {
+                    "marca": "ford",
+                    "model": "model1",
+                    "matricula": "dfs2222"
+                };
+                document.getElementById("eee").innerText = concatenarJSON(json);
+        }
+
+
+            function concatenarJSON(json) {
+                return tornarObjecte(json).toString();
+            }
+
+    </script>
+</head>
+<body>
+<div id="eee"></div>
+</body>
+</html>
