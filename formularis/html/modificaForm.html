@@ -4,8 +4,29 @@
     <meta charset="UTF-8">
     <title>Mostruari</title>
     <link rel="stylesheet" href="../css/form.css">
+    <script>
+        window.onload = () => {
+            document.getElementsByName("boto")[0].onclick = () => {
+                document.getElementsByName("medat")[1].checked = true;
+                document.getElementsByName("programar")[0].checked = true;
+                document.getElementsByTagName("option")[1].selected = true;
+                document.getElementsByTagName("option")[2].selected = true;
+
+                document.getElementsByTagName("option")[7].selected = true;
+
+                document.getElementsByName("pass")[0].disabled = true;
+                document.getElementsByName("nom")[0].readOnly = true;
+
+                document.getElementsByTagName("p")[0].hidden = false;
+                document.getElementsByTagName("p")[1].innerText = "Ambdos tipus eviten que l'usuari esrigui dins el camp," +
+                    " però en el cas de disabled, aquest c amp no sénviarà al servidor."
+
+
+            }
+        }
+    </script>
 </head>
-<body>
+<body style="display: flex; flex-direction: column">
 <form method="post" action="mostruari.php">
     <fieldset>
         <legend>Formulari</legend>
@@ -77,6 +98,9 @@
         </div>
     </fieldset>
 </form>
+<br/>
+<p hidden="hidden">Diferència entre readOnly i disabled:</p>
+<p></p>
 
 </body>
 </html>
