@@ -3,36 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>ex4</title>
-<script type="module">
-    import {Alumne, Modul} from "./Ex4Classes.js";
-    window.onload = () => {
-        let tot = new Map;
-        tot.set("alumne1" , new Alumne("Gori", "Franco Nicolau", 1));
-        tot.set("Moul1", new Modul("M2", "C2", 1));
-        tot.set("Moul2", new Modul("M1", "C1", 1));
-        tot.set("Moul3", new Modul("M3", "C3", 1));
+    <script type="module">
+        import {Alumne, Modul} from "./Ex4Classes.js";
 
-        tot.get("alumne1").afegirModul(tot.get("Modul1"));
-        tot.get("alumne1").afegirModul(tot.get("Modul2"));
-        tot.get("alumne1").afegirModul(tot.get("Modul3"));
+        window.onload = () => {
+            let tot = new Map;
+            tot.set("alumne1", new Alumne("Gori", "Franco Nicolau", 1));
+            tot.set("Moul1", new Modul("M2", "C2", 1));
+            tot.set("Moul2", new Modul("M1", "C1", 1));
+            tot.set("Moul3", new Modul("M3", "C3", 1));
 
-        document.getElementById("alumne1").innerHTML += "Nom: " + tot.get("alumne1").nom + "<br/>";
+            tot.get("alumne1").afegirModul(tot.get("Modul1"));
+            tot.get("alumne1").afegirModul(tot.get("Modul2"));
+            tot.get("alumne1").afegirModul(tot.get("Modul3"));
 
-        document.getElementById("alumne1").innerHTML += "Moduls: " + tot.get("alumne1").moduls.size + "<br/>";
-        tot.get("alumne1").moduls.forEach( aa => function (){
-            document.getElementById("alumne1").innerHTML += "<br>" + aa.nom;
-        })
+            document.getElementById("alumne1").innerHTML += "Nom: " + tot.get("alumne1").nom + "<br/>";
 
-
-
+            document.getElementById("alumne1").innerHTML += "Moduls: " + tot.get("alumne1").moduls.size + "<br/>";
+            tot.get("alumne1").moduls.forEach(aa => function () {
+                document.getElementById("alumne1").innerHTML += "<br>" + aa.nom;
+            })
 
 
-        for (let modulsValues in tot.get("alumne1").moduls.values()) {
-            document.getElementById("alumne1").innerHTML += modulsValues.nom + " ";
+            for (let modulsValues in tot.get("alumne1").moduls.values()) {
+                document.getElementById("alumne1").innerHTML += modulsValues.nom + " ";
+            }
+            // tot.get("alumne1").moduls.forEach(a => document.getElementById("alumne1").innerHTML += a.nomComplet() + " ");
         }
-        // tot.get("alumne1").moduls.forEach(a => document.getElementById("alumne1").innerHTML += a.nomComplet() + " ");
-    }
-</script>
+    </script>
 </head>
 <body>
 <div id="alumne1"></div>

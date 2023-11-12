@@ -19,7 +19,7 @@ function treureActor(actor_id) {
     document.getElementById("mostrador").innerHTML += "Llinatge: " + actorTret.lastName + "<br/>";
 }
 
-export default function actorsExercici(){
+export default function actorsExercici() {
     window.onload = () => {
         treureActor(20);
     }

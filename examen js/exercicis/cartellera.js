@@ -1,6 +1,6 @@
 import {getDestacades} from "../js/servidor";
 
-export default function cartelleraExercici(){
+export default function cartelleraExercici() {
     window.onload = () => {
 
         //exercici 1

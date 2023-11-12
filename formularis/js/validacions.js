@@ -22,24 +22,24 @@ window.onload = () => {
 
         let inputs = document.getElementsByTagName("input");
         for (let input of inputs) {
-            if(!validarObligatori(input.value)){
-                input.style.border =  "2px solid red";
+            if (!validarObligatori(input.value)) {
+                input.style.border = "2px solid red";
                 missatge += (input.name + " no pot estar buit.\n");
-            }else{
-                if(input.type === "tel" && !validarTelefon(input.value)) missatge += input.name + " incorrecte\n";
-                if(input.type === "date" && !validarData(input.value)) missatge += input.name + " incorrecte\n";
+            } else {
+                if (input.type === "tel" && !validarTelefon(input.value)) missatge += input.name + " incorrecte\n";
+                if (input.type === "date" && !validarData(input.value)) missatge += input.name + " incorrecte\n";
             }
         }
         let textArea = document.getElementsByTagName("textarea")[0];
-        if(!validarObligatori(textArea.value)){
-            textArea.style.border =  "2px solid red";
+        if (!validarObligatori(textArea.value)) {
+            textArea.style.border = "2px solid red";
         }
         let selectorSexe = document.getElementsByTagName("select")[0];
-        if(selectorSexe.selectedIndex === 0){
-            selectorSexe.style.border =  "2px solid red";
+        if (selectorSexe.selectedIndex === 0) {
+            selectorSexe.style.border = "2px solid red";
         }
         console.log(missatge);
-        if(missatge !== "") alert(missatge);
+        if (missatge !== "") alert(missatge);
     }
 }
 

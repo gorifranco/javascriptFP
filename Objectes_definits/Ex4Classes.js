@@ -7,23 +7,23 @@ export class Alumne {
         this.moduls = new Set;
     }
 
-    afegirModul (modul){
+    afegirModul(modul) {
         this.moduls.add(modul);
     }
 
-    eliminarModul(modul){
+    eliminarModul(modul) {
         this.moduls.delete(modul);
     }
 
-    nomComplet(){
+    nomComplet() {
         return this.llinatges + " " + this.nom;
     }
 }
 
-export class Modul{
+export class Modul {
     constructor(nom, codi, curs) {
-    this.nom = nom;
-    this.codi = codi;
-    this.curs = curs;
+        this.nom = nom;
+        this.codi = codi;
+        this.curs = curs;
     }
 }

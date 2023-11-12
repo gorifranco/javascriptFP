@@ -7,6 +7,7 @@ function crearAlumno2() {
     };
     return alumno;
 }
-function tornarCadena(json){
+
+function tornarCadena(json) {
     return JSON.stringify(json);
 }
