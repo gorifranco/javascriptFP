@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mostruari</title>
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+<form method="post" action="mostruari.php">
+    <fieldset>
+        <legend>Formulari</legend>
+        <label>Nom:
+            <input type="text" name="nom">
+        </label>
+        <label>Email:
+            <input type="email" name="mail">
+        </label>
+        <label>Contrassenya:
+            <input type="password" name="pass">
+        </label>
+        <label style="display: flex">Comentari:
+            <textarea name="comentari" style="margin-left: 5px"></textarea>
+        </label>
+        <label style="display: inline-block">Major d'edat?
+            <label>Si
+                <input type="radio" name="medat">
+            </label>
+            <label>No
+                <input type="radio" name="medat">
+            </label>
+        </label>
+        <br>
+        <label style="display: inline-block">Gustos:
+            <label>Nedar
+                <input type="checkbox" name="nedar">
+            </label>
+            <label>Dormir
+                <input type="checkbox" name="dormir">
+            </label>
+            <label>Programar
+                <input type="checkbox" name="programar">
+            </label>
+        </label>
+
+        <label style="display: flex">Qualitats personals:
+            <select name="qualitats[]" multiple="multiple">
+                <option value="cap">Cap</option>
+                <option value="persev">Perseverança</option>
+                <option value="int">Intuïció</option>
+            </select>
+        </label>
+
+        <label>Selecciona una fruita:
+            <select name="fruita">
+                <optgroup label="Cítrics">
+                    <option value="taronja">Taronja</option>
+                    <option value="llimona">Llimona</option>
+                    <option value="pampol">Pampol</option>
+                </optgroup>
+                <optgroup label="Fruites de cossos">
+                    <option value="poma">Poma</option>
+                    <option value="pera">Pera</option>
+                    <option value="pressec">Pressec</option>
+                </optgroup>
+                <optgroup label="Mandarines">
+                    <option value="maduixa">Maduixa</option>
+                    <option value="morer">Morer</option>
+                    <option value="nabius">Nabius</option>
+                </optgroup>
+            </select>
+        </label>
+
+        <div style="display: block">
+            <input type="submit" name="submit" value="Enviar">
+            <input type="reset" name="reset" value="Reset">
+            <input type="button" name="boto" value="No faig res">
+        </div>
+    </fieldset>
+</form>
+
+</body>
+</html>

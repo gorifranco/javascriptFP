@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulari d'Informació Personal</title>
+    <style>
+        @keyframes animacioCustom1 {
+            0% { transform: rotate(0deg); }
+            33% { transform: rotate(6deg); }
+            66% { transform: rotate(-3deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        body {
+            display: flex;
+            font-family: "Arial", sans-serif;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+        }
+
+        fieldset {
+            margin: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        span{
+            display: inline-block;
+            margin-top: 3px;
+        }
+
+        p {
+            text-decoration-line: underline;
+            margin: auto;
+            font-size: larger;
+        }
+            input, select {
+            border-radius: 5px;
+            margin: 0 0 0 10px;
+            float: right;
+            padding: 3px;
+            letter-spacing: 1px;
+                border: 2px solid black;
+
+        }
+            select{
+                min-width: 171px;
+            }
+        input:hover, input:focus, select:hover, select:focus{
+            scale: 110%;
+        }
+
+        label {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 20px 0;
+        }
+
+        #container {
+            display: flex;
+            margin: auto;
+        }
+
+        input[type="button"] {
+            width: 100px;
+            margin: 10px auto 20px auto;
+            background-color: floralwhite;
+            border-radius: 4px;
+            outline: none;
+            border: 2px solid #d8e3d7;
+
+        }
+        input[type="button"]:hover {
+            background-color: gainsboro;
+            scale: 115%;
+            animation: animacioCustom1 .2s 1;
+        }
+
+        #desc {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        #desc > textarea {
+            margin-top: 5px;
+        }
+
+    </style>
+    <script src="../js/validacions.js"></script>
+</head>
+<body>
+<div id="container">
+    <form novalidate="novalidate">
+        <fieldset title="Dades bàsiques"><p>Dades bàsiques</p>
+            <label><span>Nom</span>
+                <input type="text" id="nom" name="nom" placeholder="Nom" required>
+            </label>
+
+            <label><span>Cognoms</span>
+                <input type="text" id="llinatges" name="llinatges" required>
+            </label>
+
+            <label><span>Telèfon 1</span>
+                <input type="tel" id="tf1" name="tf1">
+            </label>
+
+            <label><span>Telèfon 2</span>
+                <input type="tel" id="tf2" name="tf2">
+            </label>
+        </fieldset>
+
+        <fieldset title="Altres dades">
+            <p>Altres dades</p>
+            <label><span>Correu Electrònic</span>
+                <input type="email" id="email" name="email" required>
+            </label>
+            <label><span>Data de Naixement</span>
+                <input type="date" id="dataNaix" name="dataNaix" required>
+            </label>
+            <label><span>Sexe</span>
+                <select id="sexe" name="sexo">
+                    <option value=""></option>
+                    <option value="masculí">Masculí</option>
+                    <option value="femení">Femení</option>
+                    <option value="altre">Altres</option>
+                </select>
+            </label>
+            <label>Illa
+                <input type="text" id="illa" name="illa">
+            </label>
+            <label>Població
+                <input type="text" id="poblacio" name="poblacio">
+            </label>
+            <label>Carrer
+                <input type="text" id="carrer" name="carrer">
+            </label>
+            <label>Codi Postal
+                <input type="text" id="codiPostal" name="codiPostal">
+            </label>
+            <label id="desc">Breu Descripció
+                <textarea name="descripcio"></textarea>
+            </label>
+        </fieldset>
+        <input type="button" value="Enviar" id="submit">
+    </form>
+</div>
+</body>
+</html>
