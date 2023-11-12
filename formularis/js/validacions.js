@@ -3,7 +3,7 @@ function validarTelefon(str) {
 }
 
 function validarData(str) {
-    return /^(?:(?:(?:(?:0[1-9]|1[0-9]|2[0-8])-(?:0[1-9]|1[012]))|(?:(?:29|30|31)-(?:0[13578]|1[02]))|(?:(?:29|30)-(?:0[4,6,9]|11)))-(?:19|[2-9][0-9])\d\d)|(?:29-02-(?:19|[2-9][0-9])(?:00|04|08|12|16|20|24|28|32|36|40|44|48|52|56|60|64|68|72|76|80|84|88|92|96))$/.test(str)
+    return /^([0-2]\d|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/.test(str)
 }
 
 function validarDNI(str) {
@@ -25,6 +25,9 @@ window.onload = () => {
             if(!validarObligatori(input.value)){
                 input.style.border =  "2px solid red";
                 missatge += (input.name + " no pot estar buit.\n");
+            }else{
+                if(input.type === "tel" && !validarTelefon(input.value)) missatge += input.name + " incorrecte\n";
+                if(input.type === "date" && !validarData(input.value)) missatge += input.name + " incorrecte\n";
             }
         }
         let textArea = document.getElementsByTagName("textarea")[0];
@@ -39,3 +42,5 @@ window.onload = () => {
         if(missatge !== "") alert(missatge);
     }
 }
+
+export {validarData, validarTelefon, validarDNI, validarObligatori}
