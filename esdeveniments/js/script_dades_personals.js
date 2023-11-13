@@ -5,20 +5,26 @@ window.onload = () => {
     })
 
     document.getElementById("formulari").addEventListener("mouseleave", function (){
-        document.getElementById("formulari").reset();
+        document.getElementById("reset").click();
     })
     document.getElementsByTagName("form")[0].addEventListener("paste", function (){
         document.getElementById("submit").click();
     })
 
-    document.getElementById("formulari").addEventListener("reset", function (){
+    document.getElementById("formulari").addEventListener("reset", function (evt){
         let confirmar = confirm("Segur que vols fer resset?");
         if(confirmar){
             document.getElementById("reset").click();
         } else{
-            event.preventDefault();
+            evt.preventDefault();
         }
     })
+
+    document.getElementById("illa").addEventListener("blur", function (){
+        document.getElementById("poblacio").hidden = true;
+        document.getElementById("pobSel").hidden = false;
+
+            })
 
 }
 function validar(){
