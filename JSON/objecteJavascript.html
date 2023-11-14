@@ -2,15 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>OJS</title>
-    <script src="json.js"></script>
-    <script>
+    <title>objecteJavascript</title>
+    <script type="module">
+        import {crearObjecte} from "./json";
+        import {crearAlumno} from "./json";
+
         window.onload = () => {
-            document.getElementById("ex1").innerText = JSON.stringify(crearObjecte());
-        }
+    let al1 = crearObjecte();
+    document.getElementById("exercici21").innerText = JSON.stringify(al1);
+            let alumno = crearAlumno();
+            document.write("Nombre: " + alumno.nombre + "<br>");
+            document.write("Apellidos: " + alumno.apellidos + "<br>");
+            document.write("Ciclo: " + alumno.cicle + "<br>");
+            document.write("Número de Módulos: " + alumno.numModulos + "<br>");
+
+
+}
     </script>
+    <script src="p2.js"></script>
+    <script>
+        let alumno =JSON.stringify(crearAlumno2());
+
+document.writeln(alumno);
+    </script>
+
 </head>
 <body>
-<div id="ex1"></div>
+<div id="exercici21"></div>
+<div id="exercici21a"></div>
 </body>
 </html>

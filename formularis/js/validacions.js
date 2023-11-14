@@ -42,5 +42,3 @@ window.onload = () => {
         if (missatge !== "") alert(missatge);
     }
 }
-
-export {validarData, validarTelefon, validarDNI, validarObligatori}

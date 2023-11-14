@@ -1,4 +1,10 @@
 window.onload = () => {
+
+    let arrayPoblacions = new Map();
+    arrayPoblacions.set("Mallorca", ["Inca", "Santa Maria"]);
+    arrayPoblacions.set("Menorca", ["Mao", "Ciutadella"])
+
+
     window.addEventListener("resize", function () {
         document.getElementById("illa").value = "Mallorca";
         document.getElementById("nom").focus()
@@ -20,13 +26,27 @@ window.onload = () => {
         }
     })
 
-    document.getElementById("illa").addEventListener("blur", function (){
-        document.getElementById("poblacio").hidden = true;
-        document.getElementById("pobSel").hidden = false;
+    let select = document.getElementById("illa")
+    let poblacio = document.getElementById("poblacio")
+    select.addEventListener("change", function (){
+        while (poblacio.options.length > 0){
+            poblacio.options.remove(0)
+        }
 
-            })
+        let a = arrayPoblacions.get(select.value);
+        for (let aElement of a) {
+            let x = document.createElement("option")
+            x.value = aElement;
+            x.text = aElement;
+            document.getElementById("poblacio").options.add(x);
+        }
+
+        })
+
+
 
 }
+
 function validar(){
     let missatge = "";
 
