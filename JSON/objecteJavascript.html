@@ -8,8 +8,8 @@
         import {crearAlumno} from "./json";
 
         window.onload = () => {
-    let al1 = crearObjecte();
-    document.getElementById("exercici21").innerText = JSON.stringify(al1);
+            let al1 = crearObjecte();
+            document.getElementById("exercici21").innerText = JSON.stringify(al1);
             let alumno = crearAlumno();
             document.write("Nombre: " + alumno.nombre + "<br>");
             document.write("Apellidos: " + alumno.apellidos + "<br>");
@@ -17,13 +17,13 @@
             document.write("Número de Módulos: " + alumno.numModulos + "<br>");
 
 
-}
+        }
     </script>
     <script src="p2.js"></script>
     <script>
-        let alumno =JSON.stringify(crearAlumno2());
+        let alumno = JSON.stringify(crearAlumno2());
 
-document.writeln(alumno);
+        document.writeln(alumno);
     </script>
 
 </head>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event object</title>
+    <script>
+        function funcioTeclat(esdeveniment) {
+            document.getElementById("paragraf").innerHTML += ("<br>Nom:  " + esdeveniment.type + " valor: " + esdeveniment.key + "</br>")
+        }
+
+        function funcioMouse(esdeveniment) {
+            document.getElementById("paragraf").innerHTML += ("<br>Nom:  " + esdeveniment.type + " valor: " + esdeveniment.button + "</br>")
+        }
+
+        window.onload = () => {
+            document.getElementById("boto").addEventListener("click", funcioMouse)
+            document.getElementById("text").addEventListener("keydown", funcioTeclat)
+
+        }
+
+    </script>
+</head>
+<body>
+<form>
+    <label>
+        <input type="text" id="text">
+    </label>
+    <input id="boto" type="button" value="boto">
+    <p id="paragraf"></p>
+</form>
+</body>
+</html>
