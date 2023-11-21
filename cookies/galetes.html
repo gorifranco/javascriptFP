@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Galetes</title>
+    <script src="galetes.js"></script>
+    <script>
+
+        //Exercici 3
+        window.onload = () => {
+            document.querySelector("input[type='submit']").addEventListener("click", guardarGaletes);
+            document.querySelector("input[type='button']").addEventListener("click", borrarGaletes);
+            console.log(document.cookie)
+                let inputs = document.querySelectorAll("input[type='text']")
+                inputs[0].value = (getCookie("usuari") !== undefined)?getCookie("usuari"):"";
+        }
+        function guardarGaletes(){
+            let inputs = document.querySelectorAll("input[type='text']")
+            if(inputs[0].value !== "" && inputs[1].value !== "")
+            setCookie("usuari", inputs[0].value, 4)
+        }
+        function borrarGaletes(){
+            deleteAllCookies()
+            console.log(document.cookie)
+        }
+    </script>
+</head>
+<body>
+<form>
+    <label>Usuari
+        <input type="text" required>
+    </label>
+    <label>Contrassenya
+    <input type="text" required>
+    </label>
+    <input type="submit">
+    <input type="button" value="borrarCookies">
+</form>
+</body>
+</html>
