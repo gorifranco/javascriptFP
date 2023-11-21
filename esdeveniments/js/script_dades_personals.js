@@ -10,26 +10,26 @@ window.onload = () => {
         document.getElementById("nom").focus()
     })
 
-    document.getElementById("formulari").addEventListener("mouseleave", function (){
+    document.getElementById("formulari").addEventListener("mouseleave", function () {
         document.getElementById("reset").click();
     })
-    document.getElementsByTagName("form")[0].addEventListener("paste", function (){
+    document.getElementsByTagName("form")[0].addEventListener("paste", function () {
         document.getElementById("submit").click();
     })
 
-    document.getElementById("formulari").addEventListener("reset", function (evt){
+    document.getElementById("formulari").addEventListener("reset", function (evt) {
         let confirmar = confirm("Segur que vols fer resset?");
-        if(confirmar){
+        if (confirmar) {
             document.getElementById("reset").click();
-        } else{
+        } else {
             evt.preventDefault();
         }
     })
 
     let select = document.getElementById("illa")
     let poblacio = document.getElementById("poblacio")
-    select.addEventListener("change", function (){
-        while (poblacio.options.length > 0){
+    select.addEventListener("change", function () {
+        while (poblacio.options.length > 0) {
             poblacio.options.remove(0)
         }
 
@@ -41,13 +41,12 @@ window.onload = () => {
             document.getElementById("poblacio").options.add(x);
         }
 
-        })
-
+    })
 
 
 }
 
-function validar(){
+function validar() {
     let missatge = "";
 
     let inputs = document.getElementsByTagName("input");
@@ -71,6 +70,7 @@ function validar(){
     console.log(missatge);
     if (missatge !== "") alert(missatge);
 }
+
 function validarTelefon(str) {
     return /^[6789]\d{8}$/.test(str)
 }
@@ -78,6 +78,7 @@ function validarTelefon(str) {
 function validarData(str) {
     return /^([0-2]\d|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/.test(str)
 }
+
 function validarObligatori(str) {
     return !(str === null || str === '');
 }

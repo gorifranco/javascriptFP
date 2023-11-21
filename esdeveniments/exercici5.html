@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ecercici 5</title>
+    <script>
+        window.onload = () => {
+            let boto = document.getElementById("boto");
+            let div = document.getElementById("div");
+            let ordre = document.getElementById("ordre")
+            boto.addEventListener("click", function (event) {
+                div.style.backgroundColor = "red";
+                ordre.innerText += "Executat event1; "
+              event.stopImmediatePropagation()
+
+            })
+          boto.addEventListener("click", function () {
+            div.innerText = "click";
+            ordre.innerText += "Executat event12; "
+          })
+          boto.addEventListener("click", function () {
+            div.style.border = "1px solid black"
+            ordre.innerText += "Executat event3; "
+          })
+        }
+    </script>
+</head>
+<body>
+<div id="div"></div>
+<div id="ordre"></div>
+<button type="button" id="boto">boto</button>
+</body>
+</html>

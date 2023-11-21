@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bubbling form</title>
+</head>
+<script>
+    window.onload = () => {
+
+        let contador = 0;
+        let inputs = document.getElementsByTagName("input")
+        for (let input of inputs) {
+            input.addEventListener("keydown", function () {
+                document.getElementById("div").innerText = ++contador;
+            })
+        }
+    }
+
+</script>
+<body>
+<form>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+
+    <div id="div">0</div>
+
+</form>
+</body>
+</html>
