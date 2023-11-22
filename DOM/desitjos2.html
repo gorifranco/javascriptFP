@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Desitjos</title>
+    <script>
+        window.onload = () => {
+            document.querySelector("input[type='button']").addEventListener("click", function (){
+                let llista = document.querySelector("ul")
+                let element = document.createElement("li");
+                let link = document.createElement("a")
+                link.text = "eliminar"
+                link.style.color = "red"
+                link.style.marginLeft = "10px"
+                link.addEventListener("click", eliminar)
+                element.textContent = document.querySelector("input[type='text']").value
+                element.appendChild(link)
+                llista.appendChild(element)
+            })
+        }
+        function eliminar(evt){
+            evt.target.parentElement.remove()
+        }
+
+    </script>
+</head>
+<body>
+<form>
+    <input type="text" id="text">
+    <input type="button" value="afegir">
+</form>
+<ul>
+</ul>
+</body>
+</html>

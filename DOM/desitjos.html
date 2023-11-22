@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Desitjos</title>
+    <script>
+        window.onload = () => {
+            document.querySelector("input[type='button']").addEventListener("click", function (){
+                let llista = document.querySelector("ul")
+                let element = document.createElement("li");
+                element.textContent = document.querySelector("input[type='text']").value
+                llista.appendChild(element)
+            })
+        }
+
+    </script>
+</head>
+<body>
+<form>
+    <input type="text" id="text">
+    <input type="button" value="afegir">
+</form>
+<ul>
+</ul>
+</body>
+</html>
