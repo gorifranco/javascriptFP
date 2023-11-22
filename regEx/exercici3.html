@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ex2</title>
+    <script>
+window.onload = () => {
+    let regEx = new RegExp(/^(0[123456789]|[12]\d|3[01])-(0[123456789]|1[012])-\d{4}$/);
+    document.getElementById("boto").addEventListener("click", function (){
+        let text = document.getElementById("text").value;
+        console.log(text)
+        if(regEx.test(text)){
+
+            document.getElementById("resultat").innerText = "Data correcta"
+        }else{
+            document.getElementById("resultat").innerText = "data incorrecta"
+        }
+    })
+}
+    </script>
+</head>
+<body>
+<form>
+    <input type="text" id="text">
+    <input type="button" id="boto" value="submit">
+</form>
+<p id="resultat"></p>
+</body>
+</html>
