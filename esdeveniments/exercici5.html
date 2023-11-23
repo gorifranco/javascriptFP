@@ -11,17 +11,17 @@
             boto.addEventListener("click", function (event) {
                 div.style.backgroundColor = "red";
                 ordre.innerText += "Executat event1; "
-              event.stopImmediatePropagation()
+                event.stopImmediatePropagation()
 
             })
-          boto.addEventListener("click", function () {
-            div.innerText = "click";
-            ordre.innerText += "Executat event12; "
-          })
-          boto.addEventListener("click", function () {
-            div.style.border = "1px solid black"
-            ordre.innerText += "Executat event3; "
-          })
+            boto.addEventListener("click", function () {
+                div.innerText = "click";
+                ordre.innerText += "Executat event12; "
+            })
+            boto.addEventListener("click", function () {
+                div.style.border = "1px solid black"
+                ordre.innerText += "Executat event3; "
+            })
         }
     </script>
 </head>

@@ -10,25 +10,28 @@
         window.onload = () => {
             document.querySelector("input[type='submit']").addEventListener("click", guardarGaletes);
             document.querySelector("input[type='button']").addEventListener("click", borrarGaletes);
-                let inputs = document.querySelectorAll("input[type='text']")
-                inputs[0].value = (getCookie("usuari") !== undefined)?getCookie("usuari"):"";
-                inputs[1].value = (getCookie("pass") !== undefined)?getCookie("pass"):"";
-                imprimirCookies()
-        }
-        function guardarGaletes(event){
             let inputs = document.querySelectorAll("input[type='text']")
-            if(inputs[0].value !== "" && inputs[1].value !== ""){
+            inputs[0].value = (getCookie("usuari") !== undefined) ? getCookie("usuari") : "";
+            inputs[1].value = (getCookie("pass") !== undefined) ? getCookie("pass") : "";
+            imprimirCookies()
+        }
+
+        function guardarGaletes(event) {
+            let inputs = document.querySelectorAll("input[type='text']")
+            if (inputs[0].value !== "" && inputs[1].value !== "") {
                 setCookie("usuari", inputs[0].value, 4)
                 setCookie("pass", inputs[1].value, 4)
-            }else{
+            } else {
                 event.preventDefault()
             }
         }
-        function borrarGaletes(){
+
+        function borrarGaletes() {
             deleteAllCookies()
             imprimirCookies()
             console.log(document.cookie)
         }
+
         function imprimirCookies() {
             let galletes = document.cookie.split(";");
             for (let i = 0; i < galletes.length; i++) {
@@ -47,7 +50,7 @@
         <input type="text" required>
     </label>
     <label>Contrassenya
-    <input type="text" required>
+        <input type="text" required>
     </label>
     <input type="submit">
     <input type="button" value="borrarCookies">

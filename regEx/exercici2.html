@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <title>ex2</title>
     <script>
-window.onload = () => {
-    let regEx = new RegExp(/^(0[123456789]|[123]\d)-[01]\d-\d{4}$/);
-    document.getElementById("boto").addEventListener("click", function (){
-        let text = document.getElementById("text").value;
+        window.onload = () => {
+            let regEx = new RegExp(/^(0[123456789]|[123]\d)-[01]\d-\d{4}$/);
+            document.getElementById("boto").addEventListener("click", function () {
+                let text = document.getElementById("text").value;
 
-        console.log(text)
-        if(regEx.test(text)){
+                console.log(text)
+                if (regEx.test(text)) {
 
-            document.getElementById("resultat").innerText = "Data correcta"
-        }else{
-            document.getElementById("resultat").innerText = "data incorrecta"
+                    document.getElementById("resultat").innerText = "Data correcta"
+                } else {
+                    document.getElementById("resultat").innerText = "data incorrecta"
+                }
+            })
         }
-    })
-}
     </script>
 </head>
 <body>

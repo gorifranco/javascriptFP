@@ -5,7 +5,7 @@
     <title>Desitjos</title>
     <script>
         window.onload = () => {
-            document.querySelector("input[type='button']").addEventListener("click", function (){
+            document.querySelector("input[type='button']").addEventListener("click", function () {
                 let llista = document.querySelector("ul")
                 let element = document.createElement("li");
                 let link = document.createElement("a")
@@ -18,7 +18,8 @@
                 llista.appendChild(element)
             })
         }
-        function eliminar(evt){
+
+        function eliminar(evt) {
             evt.target.parentElement.remove()
         }
 

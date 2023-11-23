@@ -6,13 +6,13 @@
     <script>
         window.onload = () => {
             //Exercici 1
-            document.getElementById("boto").addEventListener("click", function (){
+            document.getElementById("boto").addEventListener("click", function () {
                 let regExp = new RegExp(/^[a-zA-ZçñÇÑ]/);
                 let inputTxt = document.getElementById("text").value;
                 let resultat = document.getElementById("resultat")
-                if(regExp.test(inputTxt)){
+                if (regExp.test(inputTxt)) {
                     resultat.innerText = "Comença per una lletra"
-                }else{
+                } else {
                     resultat.innerText = "No comença per una lletra"
                 }
             })

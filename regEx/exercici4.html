@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <title>ex2</title>
     <script>
-window.onload = () => {
-    document.getElementById("boto").addEventListener("click", function (){
-        let text = document.getElementById("text").value;
-            document.getElementById("resultat").innerText = text.replaceAll("\\s{2,}", " ").trim()
-    })
-}
+        window.onload = () => {
+            document.getElementById("boto").addEventListener("click", function () {
+                let text = document.getElementById("text").value;
+                document.getElementById("resultat").innerText = text.replaceAll("\\s{2,}", " ").trim()
+            })
+        }
     </script>
 </head>
 <body>

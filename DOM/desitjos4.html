@@ -8,22 +8,26 @@
             document.querySelector("input[type='button']").addEventListener("click", function () {
                 let llista = document.querySelector("ul")
                 let element = document.createElement("li");
-                let link = document.createElement("a")
-                link.text = "eliminar"
-                link.style.color = "red"
-                link.style.marginLeft = "10px"
-                link.addEventListener("click", eliminar)
+                let imatgeEliminar = document.createElement("img")
+                imatgeEliminar.src = "img/delete.svg"
+                imatgeEliminar.style.height = "13px"
+                imatgeEliminar.style.width = "13px"
+                imatgeEliminar.style.marginLeft = "10px"
+                imatgeEliminar.addEventListener("click", eliminar)
 
-                let linkCumplir = document.createElement("a")
-                linkCumplir.text = "cumplir"
-                linkCumplir.style.color = "green"
-                linkCumplir.style.marginLeft = "10px"
-                linkCumplir.addEventListener("click", cumplir)
+                let imatgeCumplir = document.createElement("img")
+                imatgeCumplir.src = "img/fletxa.svg"
+                imatgeCumplir.style.height = "13px"
+                imatgeCumplir.style.backgroundColor = "green"
+                imatgeCumplir.style.borderRadius = "100%"
+                imatgeCumplir.style.width = "13px"
+                imatgeCumplir.style.marginLeft = "10px"
+                imatgeCumplir.addEventListener("click", cumplir)
 
 
                 element.textContent = document.querySelector("input[type='text']").value
-                element.appendChild(link)
-                element.appendChild(linkCumplir)
+                element.appendChild(imatgeEliminar)
+                element.appendChild(imatgeCumplir)
                 llista.appendChild(element)
             })
         }
@@ -39,7 +43,7 @@
 
     </script>
 </head>
-<body>
+<body style="font-size: 15pt">
 <form>
     <input type="text" id="text">
     <input type="button" value="afegir">

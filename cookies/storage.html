@@ -10,23 +10,26 @@
         window.onload = () => {
             document.querySelector("input[type='submit']").addEventListener("click", guardar);
             document.querySelector("input[type='button']").addEventListener("click", borrarStorage);
-                let inputs = document.querySelectorAll("input[type='text']")
-                inputs[0].value = (localStorage.getItem("usuari") !== undefined)?localStorage.getItem("usuari"):"";
-                inputs[1].value = (localStorage.getItem("pass") !== undefined)?localStorage.getItem("pass"):"";
-                imprimirLocalStorage()
-        }
-        function guardar(event){
             let inputs = document.querySelectorAll("input[type='text']")
-            if(inputs[0].value !== "" && inputs[1].value !== ""){
+            inputs[0].value = (localStorage.getItem("usuari") !== undefined) ? localStorage.getItem("usuari") : "";
+            inputs[1].value = (localStorage.getItem("pass") !== undefined) ? localStorage.getItem("pass") : "";
+            imprimirLocalStorage()
+        }
+
+        function guardar(event) {
+            let inputs = document.querySelectorAll("input[type='text']")
+            if (inputs[0].value !== "" && inputs[1].value !== "") {
                 localStorage.setItem("usuari", inputs[0].value)
                 localStorage.setItem("pass", inputs[1].value)
-            }else{
+            } else {
                 event.preventDefault()
             }
         }
-        function borrarStorage(){
+
+        function borrarStorage() {
             localStorage.clear()
         }
+
         function imprimirLocalStorage() {
             for (let i = 0; i < localStorage.length; i++) {
                 console.log(localStorage.key(i) + ": " + localStorage.getItem(localStorage.key(i)))
@@ -40,7 +43,7 @@
         <input type="text" required>
     </label>
     <label>Contrassenya
-    <input type="text" required>
+        <input type="text" required>
     </label>
     <input type="submit">
     <input type="button" value="borrarCookies">

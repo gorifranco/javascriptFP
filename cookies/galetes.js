@@ -22,10 +22,11 @@ function getCookie(nomCookie) {
     }
 }
 
-function deleteCookie(nom){
-    setCookie(nom,"",-1);
+function deleteCookie(nom) {
+    setCookie(nom, "", -1);
 }
-function deleteAllCookies(){
+
+function deleteAllCookies() {
     var cookies = document.cookie.split(";");
 
 // Itera sobre cada cookie y elimínala configurando una fecha de caducidad en el pasado
