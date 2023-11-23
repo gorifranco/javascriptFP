@@ -10,15 +10,18 @@
     <script>
         window.onload = () => {
             document.querySelector("input[value='targeta']").addEventListener("change", function (evt){
-                if(evt.target.checked === true) crearFormulariTargeta()
+                let a= document.querySelector("fieldset").nextElementSibling
+                    a.firstChild.hidden = false
+                a.lastChild.hidden = true
             })
             document.querySelector("input[value='transferencia']").addEventListener("change", function (evt){
-                if(evt.target.checked === true) crearFormulariTransferencia()
+                let a= document.querySelector("fieldset").nextElementSibling
+                a.firstChild.hidden = true
+                a.lastChild.hidden = false
             })
             document.querySelector("input[type='reset']").addEventListener("click", function (){
-                let divExercici = document.querySelector("fieldset").nextElementSibling
-                while(divExercici.firstElementChild !== null){
-                    divExercici.removeChild(divExercici.firstElementChild)
+                for (let querySelectorElement of document.querySelector("fieldset").nextElementSibling.childNodes) {
+                    querySelectorElement.hidden = true
                 }
             })
 
@@ -70,12 +73,31 @@
             </div>
         </div>
     </fieldset>
-    <div id="divExercici" class="row" hidden="hidden">
+    <div  id="divExercici">
+        <div id="divTargeta" class="row" hidden="hidden">
+            <div class="col-md-8">
+                <label for="inputNombre" class="form-label">Nombre</label>
+                <input id="inputNombre" class="form-control" type="text">
+            </div>
+            <div class="col-md-2">
+                <label for="inputData" class="form-label">Data</label>
+                <input id="inputData" class="form-control" type="text">
+            </div>
+            <div class="col-md-2">
+                <label for="inputCVV" class="form-label">CVV</label>
+                <input id="inputCVV" class="form-control" type="text">
+            </div>
+        </div>
+        <div id="divTransferencia" class="row mt-2" hidden="hidden">
+            <p><span class="font-weight-bold">Conta bancària: </span>ES6000491500051234567892</p>
+            <p>En rebre la transferència li enviarem un correu amb la confirmació de la comanda.</p>
+        </div>
+        <div class="text-center mt-4">
+            <input type="submit" class="btn btn-primary" value="enviar">
+            <input type="reset" class="btn btn-warning" value="reset">
+        </div>
     </div>
-    <div class="text-center mt-4">
-        <input type="submit" class="btn btn-primary" value="enviar">
-        <input type="reset" class="btn btn-warning" value="reset">
-    </div>
+
 </form>
 </body>
 </html>
