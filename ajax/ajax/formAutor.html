@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Afegir autor</title>
+    <script type="module" src="js/formAutor.js"></script>
+</head>
+<body>
+<h1>Afegir Autor</h1>
+<form id="formAutor" action="http://52.178.39.51:8080/autors" method="post">
+    <p><label>Identificador: </label><input type="number" name="idAut" id="idAut" readonly></p>
+    <p><label>Nom: </label><input type="text" name="nomAut" id="nomAut"></p>
+    <p><label>Data Neixement: </label><input type="date" name="dnaixAut" id="dnaixAut"></p>
+    <p><label>Nacionalitat: </label><select id="nacionalitat" name="nacionalitat">
+        <option value="">Tria una nacionalitat</option>
+    </select></p>
+    <p>
+        <button type="submit">Enviar</button>
+        <button type="reset">Netejar el formulari</button>
+    </p>
+</form>
+<p><a href="index.html">Tornar a l'índex</a></p>
+
+</body>
+</html>
