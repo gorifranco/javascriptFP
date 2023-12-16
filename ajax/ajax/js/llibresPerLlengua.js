@@ -9,6 +9,7 @@ window.onload = () => {
     let llibreria = document.getElementById("llibreria")
 
     llenguesPromise.then(llengues => {
+        llengues = JSON.parse(llengues)
         llengues.forEach(item => {
             let option = document.createElement("option")
             option.appendChild(document.createTextNode(item.id))
@@ -26,7 +27,9 @@ window.onload = () => {
 
             let ruta = ruta2 + select.value
             let llibresPromise = consulta(ruta, "json")
+
             llibresPromise.then(llibres => {
+                llibres = JSON.parse(llibres)
                 llibres.forEach(item => {
                     let div = document.createElement("div")
                     div.classList.add("divLlibre")

@@ -6,6 +6,7 @@ window.onload = () => {
     let llenguesPromise = consulta(ruta);
 
     llenguesPromise.then(llengues => {
+        llengues = JSON.parse(llengues)
         llengues.forEach(item => {
             let li = document.createElement("li");
             li.appendChild(document.createTextNode(item.id));
@@ -25,7 +26,7 @@ export function consulta(rutaAplicacio, format = "json") {
                 if (req.status >= 200 && req.status <= 299) {
                     let dades = ""
                     if (req.responseText !== "") {
-                        dades = JSON.parse(req.responseText);
+                        dades = req.responseText;
                     }
                     resolve(dades);
                 } else {
