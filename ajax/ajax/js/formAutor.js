@@ -5,6 +5,10 @@ window.onload = () => {
 escriureNacionalitats()
     const formulari = document.getElementById("formAutor")
 formulari.action = rutaAplicacio +"/autors"
+    formulari.onsubmit = (e) => {
+    e.preventDefault()
+        ferInsert()
+    }
 
 }
 
@@ -40,7 +44,10 @@ function ferInsert(){
             }
         }
     })
+
+    let data = new FormData(document.getElementById("formAutor"));
+
     req.open("POST", rutaAplicacio + "/autors");
-    req.setRequestHeader("Accept", "application/json");
-    req.send();
+    req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    req.send(data);
 }
